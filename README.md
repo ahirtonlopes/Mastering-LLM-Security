@@ -15,6 +15,7 @@ Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 
 - Proteger agentes com ferramentas: menor privilégio, limites, validação e aprovação humana (HITL)
 - Registrar traces, observations e scores de segurança, com um rastreador local em Python puro
 - Medir a defesa: taxa de detecção, falsos positivos, taxa de sucesso do ataque (ASR) e ablação por camada
+- Aplicar IA responsável: saída estruturada, PII, viés e fundamentação, e avaliar a segurança de agentes
 - Conectar os conceitos à regulação: LGPD, EU AI Act e PL 2338/2023
 
 ## Pré-requisitos
@@ -34,8 +35,9 @@ Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 
 |---|---|---|---|
 | 1 | Defender um assistente: ataques, guardrails de entrada e saída, métricas e agente com HITL | [`Aula1_Security/llm_security_gemini_ptbr.ipynb`](Aula1_Security/llm_security_gemini_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula1_Security/llm_security_gemini_ptbr.ipynb) |
 | 2 | Observar e atacar a defesa: traces e scores, OWASP 2026 na prática e red teaming automatizado | [`Aula2_Security/llm_security_monitoring_ptbr.ipynb`](Aula2_Security/llm_security_monitoring_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula2_Security/llm_security_monitoring_ptbr.ipynb) |
+| 3 | IA Responsável e guardrails em agentes: saída estruturada, PII, viés, fundamentação, harness e contexto, Model Armor (opcional) e avaliação de segurança de agentes | [`Aula3_Security/responsible_ai_guardrails_ptbr.ipynb`](Aula3_Security/responsible_ai_guardrails_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula3_Security/responsible_ai_guardrails_ptbr.ipynb) |
 
-> A Aula 2 retoma o assistente da Aula 1. Rode a Aula 1 antes, ou siga a Parte 0 do notebook da Aula 2. Novas aulas serão adicionadas ao longo do semestre.
+> A Aula 2 retoma o assistente da Aula 1 e a Aula 3 retoma o mesmo cenário (TechCorp). Rode as aulas em ordem. A Seção 7 da Aula 3 (Model Armor) é opcional e exige um projeto no Google Cloud. Novas aulas serão adicionadas ao longo do semestre.
 
 ---
 
@@ -45,14 +47,14 @@ Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 
 |---|---|---|
 | LLM01 | Prompt Injection | Aulas 1 e 2 |
 | LLM02 | Sensitive Information Disclosure | Aulas 1 e 2 |
-| LLM03 | Excessive Agency | Aula 1 (agente com HITL) e Aula 2 |
-| LLM04 | Supply Chain | Em breve |
-| LLM05 | Data and Model Poisoning | Em breve |
-| LLM06 | Unbounded Consumption | Em breve |
-| LLM07 | Misinformation | Em breve |
-| LLM08 | Hidden Context Exposure | Aulas 1 e 2 |
-| LLM09 | Vector and Embedding Weaknesses | Em breve |
-| LLM10 | Improper Output Handling | Em breve |
+| LLM03 | Excessive Agency | Aulas 1 (agente com HITL), 2 e 3 (harness) |
+| LLM04 | Supply Chain | Aula 3 (conceitual) |
+| LLM05 | Data and Model Poisoning | Aula 3 (conceitual) |
+| LLM06 | Unbounded Consumption | Aula 3 (conceitual; limite de passos na Seção 6) |
+| LLM07 | Misinformation | Aula 3 (fundamentação, Seção 4) |
+| LLM08 | Hidden Context Exposure | Aulas 1, 2 e 3 |
+| LLM09 | Vector and Embedding Weaknesses | Aula 3 (conceitual; contexto na Seção 6) |
+| LLM10 | Improper Output Handling | Aula 3 (saída estruturada e validação, Seção 1) |
 
 Lista conferida em [genai.owasp.org](https://genai.owasp.org) (edição publicada em 04/08/2026).
 
