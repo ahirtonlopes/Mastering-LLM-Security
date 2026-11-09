@@ -88,7 +88,7 @@ Nunca grave a chave dentro do notebook.
 - [OWASP GenAI Security Project](https://genai.owasp.org)
 - [Google Secure AI Framework (SAIF)](https://saif.google)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [PL 2338/2023 - Marco Regulatório de IA no Brasil](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2384425)
+- [PL 2338/2023 - Marco Regulatório de IA no Brasil](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262)
 
 ---
 
