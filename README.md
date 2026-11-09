@@ -1,22 +1,21 @@
 # Mastering LLM Security
 
-Open courseware on LLM Security and AI Reliability — OWASP LLM Top 10, guardrails, monitoring, red teaming and governance · Gemini API · Python
+Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 10 para LLMs, guardrails, monitoramento e red teaming, com a API do Gemini e Python.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)
-![Gemini](https://img.shields.io/badge/Gemini_API-2.5+-orange?style=flat-square&logo=google)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Gemini](https://img.shields.io/badge/Gemini_API-AI_Studio-orange?style=flat-square&logo=google)
 ![FIAP](https://img.shields.io/badge/FIAP-MBA_IA-red?style=flat-square)
 
 ---
 
 ## O que você vai aprender
 
-- Identificar os principais vetores de ataque contra LLMs (OWASP LLM Top 10)
-- Implementar guardrails em múltiplas camadas: regex, política de escopo e LLM-as-Judge
-- Gerar e interpretar logs estruturados de segurança em JSON
-- Executar suítes de testes automatizados e calcular métricas (precisão, recall, F1)
-- Aplicar técnicas de red teaming e evasão para testar seus próprios controles
-- Conectar os conceitos ao mundo real: LGPD, EU AI Act, PL 2338/2023
+- Identificar os principais vetores de ataque contra LLMs e agentes (OWASP Top 10 for LLM Applications, edição 2026)
+- Construir guardrails em camadas: regex, política de escopo e LLM-as-Judge
+- Proteger agentes com ferramentas: menor privilégio, limites, validação e aprovação humana (HITL)
+- Registrar traces, observations e scores de segurança, com um rastreador local em Python puro
+- Medir a defesa: taxa de detecção, falsos positivos, taxa de sucesso do ataque (ASR) e ablação por camada
+- Conectar os conceitos à regulação: LGPD, EU AI Act e PL 2338/2023
 
 ## Pré-requisitos
 
@@ -25,66 +24,45 @@ Open courseware on LLM Security and AI Reliability — OWASP LLM Top 10, guardra
 | Python | Intermediário |
 | APIs REST / JSON | Básico |
 | Conceitos de Machine Learning | Básico |
-| Conta Google (AI Studio) | Necessário (gratuito) |
+| Conta Google (AI Studio) | Necessário (camada gratuita) |
 
 ---
 
 ## Conteúdo
 
-| # | Notebook | Tópicos | OWASP Ref |
+| Aula | Tema | Notebook | Abrir no Colab |
 |---|---|---|---|
-| 01 | `Aula1_Security/llm_security_gemini_ptbr.ipynb` | Assistente vulnerável, prompt injection, extração de PII, guardrails em camadas, logging estruturado, métricas de segurança | LLM01, LLM06, LLM08 |
+| 1 | Defender um assistente: ataques, guardrails de entrada e saída, métricas e agente com HITL | [`Aula1_Security/llm_security_gemini_ptbr.ipynb`](Aula1_Security/llm_security_gemini_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula1_Security/llm_security_gemini_ptbr.ipynb) |
+| 2 | Observar e atacar a defesa: traces e scores, OWASP 2026 na prática e red teaming automatizado | [`Aula2_Security/llm_security_monitoring_ptbr.ipynb`](Aula2_Security/llm_security_monitoring_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula2_Security/llm_security_monitoring_ptbr.ipynb) |
 
-> Novas aulas serão adicionadas ao longo do semestre.
-
----
-
-## Arquitetura dos Guardrails
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    APLICAÇÃO COM LLM                        │
-│                                                             │
-│  INPUT            GUARDRAILS              OUTPUT            │
-│  ───────      ─────────────────      ────────────           │
-│  Usuário  ──► Classificador    ──►   Gemini API  ──► Resp.  │
-│           ──► Padrões banidos  ──►   (se seguro)            │
-│           ──► Política escopo  ──►   Bloqueio    ──► Aviso  │
-│                    │                      │                 │
-│                    ▼                      ▼                 │
-│               ┌─────────┐          ┌──────────┐            │
-│               │  LOGS   │          │ MÉTRICAS │            │
-│               │  JSON   │          │          │            │
-│               └─────────┘          └──────────┘            │
-└─────────────────────────────────────────────────────────────┘
-```
+> A Aula 2 retoma o assistente da Aula 1. Rode a Aula 1 antes, ou siga a Parte 0 do notebook da Aula 2. Novas aulas serão adicionadas ao longo do semestre.
 
 ---
 
-## Mapeamento OWASP LLM Top 10 (2025)
+## OWASP Top 10 for LLM Applications (2026)
 
-| # | Vulnerabilidade | Coberta neste curso |
+| # | Vulnerabilidade | Onde aparece |
 |---|---|---|
-| LLM01 | Prompt Injection | ✅ Aula 1 |
-| LLM02 | Insecure Output Handling | ✅ Aula 1 |
-| LLM03 | Training Data Poisoning | ⚠️ Conceitual |
-| LLM04 | Model Denial of Service | ⚠️ Conceitual |
-| LLM05 | Supply Chain Vulnerabilities | 🔜 Em breve |
-| LLM06 | Sensitive Information Disclosure | ✅ Aula 1 |
-| LLM07 | Insecure Plugin Design | 🔜 Em breve |
-| LLM08 | Excessive Agency | ✅ Aula 1 |
-| LLM09 | Overreliance | ✅ Aula 1 |
-| LLM10 | Model Theft | ⚠️ Conceitual |
+| LLM01 | Prompt Injection | Aulas 1 e 2 |
+| LLM02 | Sensitive Information Disclosure | Aulas 1 e 2 |
+| LLM03 | Excessive Agency | Aula 1 (agente com HITL) e Aula 2 |
+| LLM04 | Supply Chain | Em breve |
+| LLM05 | Data and Model Poisoning | Em breve |
+| LLM06 | Unbounded Consumption | Em breve |
+| LLM07 | Misinformation | Em breve |
+| LLM08 | Hidden Context Exposure | Aulas 1 e 2 |
+| LLM09 | Vector and Embedding Weaknesses | Em breve |
+| LLM10 | Improper Output Handling | Em breve |
+
+Lista conferida em [genai.owasp.org](https://genai.owasp.org) (edição publicada em 04/08/2026).
 
 ---
 
 ## Como começar
 
-**Opção 1 — Google Colab (recomendado)**
+**Opção 1: Google Colab (recomendado).** Clique no botão "Open in Colab" da tabela acima.
 
-Abra qualquer notebook diretamente no GitHub e clique em **Open in Colab** no topo do arquivo.
-
-**Opção 2 — Local**
+**Opção 2: local**
 
 ```bash
 git clone https://github.com/ahirtonlopes/Mastering-LLM-Security.git
@@ -94,19 +72,21 @@ pip install google-genai jupyter
 jupyter notebook
 ```
 
-**API Key (gratuita):**
+**Chave de API (gratuita):**
 1. Acesse [aistudio.google.com](https://aistudio.google.com)
 2. Clique em **Get API key → Create API key**
 3. No Colab: adicione como secret com o nome `GEMINI_API_KEY`
+
+Nunca grave a chave dentro do notebook.
 
 ---
 
 ## Referências
 
-- [OWASP Top 10 for LLM Applications 2025](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-- [Google AI Safety](https://ai.google/responsibility/safety/)
-- [NIST AI Risk Management Framework](https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf)
-- [PL 2338/2023 — Marco Regulatório de IA no Brasil](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2384425)
+- [OWASP GenAI Security Project](https://genai.owasp.org)
+- [Google Secure AI Framework (SAIF)](https://saif.google)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+- [PL 2338/2023 - Marco Regulatório de IA no Brasil](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2384425)
 
 ---
 
@@ -114,10 +94,6 @@ jupyter notebook
 
 **Prof. Dr. Ahirton Lopes** · [LinkedIn](https://linkedin.com/in/ahirtonlopes) · [Google Scholar](https://scholar.google.com/citations?user=1SQDVrwAAAAJ)
 
-MBA em Inteligência Artificial — FIAP | Disciplina: Segurança e Confiabilidade em Sistemas de IA
+MBA em Inteligência Artificial, FIAP | Disciplina: Segurança e Confiabilidade em Sistemas de IA
 
-Contribuições são bem-vindas — abra uma issue ou envie um pull request.
-
-## Licença
-
-[MIT](LICENSE)
+Contribuições são bem-vindas: abra uma issue ou envie um pull request.
