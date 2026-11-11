@@ -15,6 +15,7 @@ Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 
 - Proteger agentes com ferramentas: menor privilégio, limites, validação e aprovação humana (HITL)
 - Registrar traces, observations e scores de segurança, com um rastreador local em Python puro
 - Medir a defesa: taxa de detecção, falsos positivos, taxa de sucesso do ataque (ASR) e ablação por camada
+- Operar em produção: traces, deriva, fila de revisão humana e auditoria
 - Aplicar IA responsável: saída estruturada, PII, viés e fundamentação, e avaliar a segurança de agentes
 - Conectar os conceitos à regulação: LGPD, EU AI Act e PL 2338/2023
 
@@ -36,8 +37,11 @@ Material aberto de **Segurança e Confiabilidade em Sistemas de IA**: OWASP Top 
 | 1 | Defender um assistente: ataques, guardrails de entrada e saída, métricas e agente com HITL | [`Aula1_Security/llm_security_gemini_ptbr.ipynb`](Aula1_Security/llm_security_gemini_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula1_Security/llm_security_gemini_ptbr.ipynb) |
 | 2 | Observar e atacar a defesa: traces e scores, OWASP 2026 na prática e red teaming automatizado | [`Aula2_Security/llm_security_monitoring_ptbr.ipynb`](Aula2_Security/llm_security_monitoring_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula2_Security/llm_security_monitoring_ptbr.ipynb) |
 | 3 | IA Responsável e guardrails em agentes: saída estruturada, PII, viés, fundamentação, harness e contexto, Model Armor (opcional) e avaliação de segurança de agentes | [`Aula3_Security/responsible_ai_guardrails_ptbr.ipynb`](Aula3_Security/responsible_ai_guardrails_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula3_Security/responsible_ai_guardrails_ptbr.ipynb) |
+| 4a | Retomada da Aula 3 (resumida): harness, 3 ataques, memória e avaliação de agentes (ASR, utilidade, trajetória) | [`Aula4_Security/retomada_aula3_agentes_ptbr.ipynb`](Aula4_Security/retomada_aula3_agentes_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula4_Security/retomada_aula3_agentes_ptbr.ipynb) |
+| 4b | Operar em produção: store de traces em SQLite, métricas, deriva, fila de revisão humana e auditoria | [`Aula4_Security/monitoramento_observabilidade_ptbr.ipynb`](Aula4_Security/monitoramento_observabilidade_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula4_Security/monitoramento_observabilidade_ptbr.ipynb) |
+| 4c | IA em domínios regulados: finanças e saúde (guardrails, explicabilidade, viés em lote, supervisão médica) | [`Aula4_Security/rai_dominios_regulados_ptbr.ipynb`](Aula4_Security/rai_dominios_regulados_ptbr.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ahirtonlopes/Mastering-LLM-Security/blob/main/Aula4_Security/rai_dominios_regulados_ptbr.ipynb) |
 
-> A Aula 2 retoma o assistente da Aula 1 e a Aula 3 retoma o mesmo cenário (TechCorp). Rode as aulas em ordem. A Seção 7 da Aula 3 (Model Armor) é opcional e exige um projeto no Google Cloud. Novas aulas serão adicionadas ao longo do semestre.
+> A Aula 2 retoma o assistente da Aula 1 e a Aula 3 retoma o mesmo cenário (TechCorp). Rode as aulas em ordem. O notebook 4a é autônomo (não exige ter rodado a Aula 3). Na camada gratuita do Gemini o limite é de 15 requisições por minuto por modelo: rode um notebook por vez com a mesma chave; os notebooks da Aula 4 esperam sozinhos quando chegam perto do limite. A Seção 7 da Aula 3 (Model Armor) é opcional e exige um projeto no Google Cloud. Novas aulas serão adicionadas ao longo do semestre.
 
 ---
 
